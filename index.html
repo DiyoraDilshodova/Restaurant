@@ -31,6 +31,7 @@
           <li><a href="#menu">Menu</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#contact">Contact</a></li>
+          <li><a href="#loginModal" id="openLogin">Login</a></li>
         </ul>
       </nav>
     </div>
@@ -43,6 +44,32 @@
       </div>
     </div>
   </header>
+ 
+  <!-- LOGIN MODAL -->
+<div id="loginModal" class="modal__login">
+  <div class="modal__overlay"></div>
+
+  <div class="modal__box">
+    <a href="#" class="modal_close">&times;</a>
+
+    <h2 class="modal__title">Login</h2>
+
+    <form class="login-form">
+      <label>Full Name</label>
+      <input type="text" placeholder="Your name" required>
+
+      <label>Email</label>
+      <input type="email" placeholder="you@example.com" required>
+
+      <label>Password</label>
+      <input type="password" placeholder="******" required>
+
+      <button type="submit" class="btn--submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+
   <!-- Header End -->
   <main>
     <!-- About Section Start -->

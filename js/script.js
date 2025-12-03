@@ -134,4 +134,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const modalTimerId = setTimeout(openModal, 5000);
+
+  // login modal
+  const openLoginBtn = document.getElementById('openLogin');
+  const loginModal = document.querySelector('.modal__login');
+  const closeLoginBtn = document.querySelector('.modal_close');
+  const overlay = document.querySelector('.modal__overlay');
+  
+  function openLogin() {
+    loginModal.classList.add('active');
+  }
+  
+  function closeLogin() {
+    loginModal.classList.remove('active');
+  }
+  
+  openLoginBtn.addEventListener('click', e => {
+    e.preventDefault();
+    openLogin();
+  });
+  
+  closeLoginBtn.addEventListener('click', closeLogin);
+  overlay.addEventListener('click', closeLogin);
+  document.addEventListener('keydown', e => {
+    if (e.key === "Escape") closeLogin();
+  });
+   
+
+  
+
+
 });
