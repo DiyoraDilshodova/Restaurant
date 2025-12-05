@@ -135,11 +135,36 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const modalTimerId = setTimeout(openModal, 5000);
 
-  // login modal
+  // register modal
+  const openRegisterBtn = document.getElementById('openRegister');
+  const registerModal = document.querySelector('.modal__register');
+  const closeRegisterBtn = document.querySelector('.modal_close');
+  const overlay = document.querySelector('.modal__overlay');
+  
+  function openRegister() {
+    registerModal.classList.add('active');
+  }
+  
+  function closeRegister() {
+    registerModal.classList.remove('active');
+  }
+  
+  openRegisterBtn.addEventListener('click', e => {
+    e.preventDefault();
+    openRegister();
+  });
+  
+  closeRegisterBtn.addEventListener('click', closeRegister);
+  overlay.addEventListener('click', closeRegister);
+  document.addEventListener('keydown', e => {
+    if (e.key === "Escape") closeRegister();
+  });
+
+  //login modal
   const openLoginBtn = document.getElementById('openLogin');
   const loginModal = document.querySelector('.modal__login');
-  const closeLoginBtn = document.querySelector('.modal_close');
-  const overlay = document.querySelector('.modal__overlay');
+  const closeLoginBtn = document.querySelector('.login_close');
+  const overlayLogin = document.querySelector('.modal__overlay');
   
   function openLogin() {
     loginModal.classList.add('active');
@@ -147,6 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
   
   function closeLogin() {
     loginModal.classList.remove('active');
+    registerModal.classList.remove('active');
   }
   
   openLoginBtn.addEventListener('click', e => {
@@ -155,7 +181,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   
   closeLoginBtn.addEventListener('click', closeLogin);
-  overlay.addEventListener('click', closeLogin);
+  overlayLogin.addEventListener('click', closeLogin);
   document.addEventListener('keydown', e => {
     if (e.key === "Escape") closeLogin();
   });

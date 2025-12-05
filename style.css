@@ -985,7 +985,7 @@ form button {
 
 
 /* MODAL asosiy */
-.modal__login {
+.modal__register, .modal__login {
   position: fixed;
   inset: 0;
   display: none;       /* JS bilan ochamiz */
@@ -996,6 +996,7 @@ form button {
 }
 
 /* Orqa fon */
+.modal__register.active,
 .modal__login.active {
   display: flex;
   
@@ -1013,7 +1014,7 @@ form button {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 350px;
+  width: 400px;
   margin: 0;
   padding: 25px;
   background: #111;
@@ -1024,7 +1025,8 @@ form button {
 }
 
 /* Close */
-.modal_close {
+.modal_close,
+.login_close {
   position: absolute;
   right: 10px;
   top: 5px;
@@ -1035,15 +1037,17 @@ form button {
 }
 
 /* Form */
+.register-form,
 .login-form {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  
+  width: 100%;
   
   
 }
 
+.register-form input,
 .login-form input {
   margin: 0;
   padding: 12px;
@@ -1052,7 +1056,7 @@ form button {
   background: #222;
   color: white;
   outline: none;
-  width: 200%;
+  width: 100%;
 }
 
 /* Submit tugma - OLov gradient */
@@ -1074,6 +1078,26 @@ form button {
 
 .btn--submit:hover {
   transform: translateY(-2px);
+}
+
+.register-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;  /* pastga tushishni oldini oladi */
+  gap: 6px;
+  margin-top: -5px;
+}
+
+.register-bottom p,
+.register-bottom a {
+  margin: 0;
+  padding: 0;
+  line-height: 1; /* matnni tik markazga moslaydi */
+}
+
+.register-bottom a {
+  color: #ff8a00;
+  text-decoration: none;
 }
 
 
